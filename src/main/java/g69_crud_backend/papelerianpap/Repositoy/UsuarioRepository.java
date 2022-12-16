@@ -18,8 +18,8 @@ public interface UsuarioRepository extends CrudRepository<Usuario,String> {
 
     public Usuario findByUserName(String user);
 
-    @Transactional(readOnly = true)
-    @Query(value = "Select * from usuario where user_name=:user and password=:pwd ",nativeQuery = true)
+    @Transactional(readOnly = false)
+    @Query(value = "Select * from usuarios where user_name=:user and password=:pwd ",nativeQuery = true)
     public Usuario login(@Param("user") String user,@Param("pwd") String pwd);
 
   

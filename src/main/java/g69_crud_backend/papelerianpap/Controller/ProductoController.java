@@ -34,7 +34,7 @@ public class ProductoController {
     
     @PostMapping("/create")
     public Producto save(@RequestBody Producto producto){
-        
+        System.out.println(producto);
         return productoService.save(producto);
     }
 

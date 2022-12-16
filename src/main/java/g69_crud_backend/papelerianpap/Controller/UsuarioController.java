@@ -207,7 +207,7 @@ public class UsuarioController {
 
     @PostMapping("/login")
     public ResponseEntity<Object> login(@RequestHeader String user, @RequestHeader String pwd) {
-        System.out.println(Hash.sha1("user")+"--"+user);
+        System.out.println(Hash.sha1(pwd)+"--"+user);
         Usuario usuario = usuarioService.login(user, Hash.sha1(pwd));
         if (usuario != null) {
             System.out.println(usuario.getRoles());
